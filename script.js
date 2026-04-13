@@ -310,38 +310,52 @@
         });
     });
 
-    // ── Contact Form ────────────────────────────────────
+    // ── Contact Form (Web3Forms) ────────────────────────
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
+        contactForm.addEventListener('submit', async function (e) {
             e.preventDefault();
             const submitBtn = document.getElementById('formSubmit');
             const originalHTML = submitBtn.innerHTML;
 
-            // Simulate send
             submitBtn.innerHTML = '<span>Sending...</span><i class="fas fa-spinner fa-spin"></i>';
             submitBtn.disabled = true;
 
-            setTimeout(() => {
-                submitBtn.innerHTML = '<span>Message Sent!</span><i class="fas fa-check"></i>';
-                submitBtn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+            try {
+                const formData = new FormData(contactForm);
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
 
-                setTimeout(() => {
-                    submitBtn.innerHTML = originalHTML;
-                    submitBtn.style.background = '';
-                    submitBtn.disabled = false;
+                if (result.success) {
+                    submitBtn.innerHTML = '<span>Message Sent!</span><i class="fas fa-check"></i>';
+                    submitBtn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
                     contactForm.reset();
-                }, 2500);
-            }, 1500);
+                } else {
+                    submitBtn.innerHTML = '<span>Failed to Send</span><i class="fas fa-times"></i>';
+                    submitBtn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
+                }
+            } catch (error) {
+                submitBtn.innerHTML = '<span>Error! Try Again</span><i class="fas fa-exclamation-triangle"></i>';
+                submitBtn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
+            }
+
+            setTimeout(() => {
+                submitBtn.innerHTML = originalHTML;
+                submitBtn.style.background = '';
+                submitBtn.disabled = false;
+            }, 3000);
         });
     }
 
     // ── Parallax Effect on Hero ─────────────────────────
     window.addEventListener('scroll', () => {
-        const hero = document.querySelector('.hero-video-wrapper');
-        if (hero) {
+        const heroOrbs = document.querySelector('.hero-bg-orbs');
+        if (heroOrbs) {
             const scrolled = window.scrollY;
-            hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+            heroOrbs.style.transform = `translateY(${scrolled * 0.2}px)`;
         }
     });
 

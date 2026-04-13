@@ -76,12 +76,12 @@
 
     <!-- ===================== HERO SECTION ===================== -->
     <section class="hero" id="hero">
-        <div class="hero-video-wrapper">
-            <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="ASSETS/hero-fallback.png">
-                <source src="ASSETS/hero-video.mp4" type="video/mp4">
-            </video>
+        <div class="hero-bg-gradient"></div>
+        <div class="hero-bg-orbs">
+            <div class="hero-orb hero-orb-1"></div>
+            <div class="hero-orb hero-orb-2"></div>
+            <div class="hero-orb hero-orb-3"></div>
         </div>
-        <div class="hero-overlay"></div>
         <div class="hero-noise"></div>
         <div class="hero-particles" id="heroParticles"></div>
 
@@ -621,7 +621,11 @@
                         </a>
                     </div>
                 </div>
-                <form class="contact-form" id="contactForm" data-reveal>
+                <form class="contact-form" id="contactForm" data-reveal action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="4696c8c9-5b68-4521-b854-1db5443e87ef">
+                    <input type="hidden" name="subject" value="New Contact from Portfolio Website">
+                    <input type="hidden" name="from_name" value="Portfolio Contact Form">
+                    <input type="checkbox" name="botcheck" class="hidden" style="display:none">
                     <div class="form-group">
                         <input type="text" id="formName" name="name" required placeholder=" " autocomplete="name">
                         <label for="formName">Your Name</label>
