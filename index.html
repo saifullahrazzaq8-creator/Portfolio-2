@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saifullah Razzaq — Full Stack Developer & Creative Director</title>
+    <meta name="description" content="Portfolio of Saifullah Razzaq — Full Stack Developer, Creative Director, and Media Leader. Building digital experiences and capturing stories.">
+    <meta name="keywords" content="Saifullah Razzaq, portfolio, full stack developer, creative director, videography, UET Taxila">
+    <meta name="author" content="Saifullah Razzaq">
+    <meta property="og:title" content="Saifullah Razzaq — Developer & Creative Director">
+    <meta property="og:description" content="Building Digital Experiences & Capturing Stories">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <div class="loader-bar"></div>
+            <span class="loader-text">SAIFULLAH RAZZAQ</span>
+            <div class="loader-progress" id="loaderProgress">0%</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-text">SR<span class="logo-dot">.</span></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" class="nav-link" data-text="About">About</a></li>
+                <li><a href="#skills" class="nav-link" data-text="Skills">Skills</a></li>
+                <li><a href="#projects" class="nav-link" data-text="Projects">Projects</a></li>
+                <li><a href="#experience" class="nav-link" data-text="Experience">Experience</a></li>
+                <li><a href="#creative" class="nav-link" data-text="Creative">Creative</a></li>
+                <li><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+                <a href="ASSETS/Saifullah_CV_v2.pdf" class="nav-cta" download>
+                    <span>Resume</span>
+                    <i class="fas fa-download"></i>
+                </a>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-links">
+            <li><a href="#about" class="mobile-link">About</a></li>
+            <li><a href="#skills" class="mobile-link">Skills</a></li>
+            <li><a href="#projects" class="mobile-link">Projects</a></li>
+            <li><a href="#experience" class="mobile-link">Experience</a></li>
+            <li><a href="#creative" class="mobile-link">Creative</a></li>
+            <li><a href="#contact" class="mobile-link">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- ===================== HERO SECTION ===================== -->
+    <section class="hero" id="hero">
+        <div class="hero-video-wrapper">
+            <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="ASSETS/hero-fallback.png">
+                <source src="ASSETS/hero-video.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-noise"></div>
+        <div class="hero-particles" id="heroParticles"></div>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <span>Available for Freelance & Opportunities</span>
+            </div>
+            <h1 class="hero-name">
+                <span class="name-line" data-aos="fade-up">
+                    <span class="char-wrapper">SAIFULLAH</span>
+                </span>
+                <span class="name-line name-line-2" data-aos="fade-up" data-aos-delay="200">
+                    <span class="char-wrapper">RAZZAQ</span>
+                </span>
+            </h1>
+            <div class="hero-subtitle">
+                <span class="subtitle-label">I am a</span>
+                <span class="typewriter" id="typewriter"></span>
+                <span class="typewriter-cursor">|</span>
+            </div>
+            <p class="hero-tagline">Building Digital Experiences & Capturing Stories</p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary" id="ctaProjects">
+                    <span>View Projects</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#contact" class="btn btn-secondary" id="ctaHireMe">
+                    <span>Hire Me</span>
+                    <i class="fas fa-paper-plane"></i>
+                </a>
+            </div>
+            <div class="hero-socials">
+                <a href="https://www.linkedin.com/in/muhammad-saifullah-7b8488253/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.instagram.com/saifylms" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="mailto:saifullahrazzaq8@gmail.com" class="social-link" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-scroll">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ===================== ABOUT SECTION ===================== -->
+    <section class="section about" id="about">
+        <div class="section-bg-glow"></div>
+        <div class="container">
+            <div class="section-header" data-reveal>
+                <span class="section-label">01 — About Me</span>
+                <h2 class="section-title">Developer by Code,<br><span class="gradient-text">Creator by Vision</span></h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-image" data-reveal>
+                    <div class="image-wrapper">
+                        <img src="ASSETS/WhatsApp Image 2026-04-13 at 12.39.33 AM.jpeg" alt="Saifullah Razzaq" loading="lazy">
+                        <div class="image-border"></div>
+                        <div class="image-glow"></div>
+                    </div>
+                    <div class="about-badge-card">
+                        <i class="fas fa-code"></i>
+                        <span>CS Student @ UET Taxila</span>
+                    </div>
+                </div>
+                <div class="about-content" data-reveal>
+                    <h3 class="about-heading">Bridging Technology & Creativity</h3>
+                    <p class="about-text">
+                        I'm a Computer Science student at <strong>UET Taxila</strong> who lives at the intersection of code and cinema. 
+                        My journey started with a passion for building things — from software systems to video narratives that captivate audiences.
+                    </p>
+                    <p class="about-text">
+                        As a <strong>Full Stack Developer</strong>, I craft responsive, performant web applications. As a <strong>Creative Director</strong>, 
+                        I lead media teams, produce cinematic content, and direct visual storytelling for national-level events. 
+                        I believe the best digital experiences emerge when engineering precision meets artistic vision.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-card">
+                            <span class="stat-number" data-count="10">0</span><span class="stat-suffix">+</span>
+                            <span class="stat-label">Projects Built</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number" data-count="3">0</span><span class="stat-suffix">+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number" data-count="5">0</span><span class="stat-suffix">+</span>
+                            <span class="stat-label">Leadership Roles</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SKILLS SECTION ===================== -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <div class="section-header" data-reveal>
+                <span class="section-label">02 — Skills & Expertise</span>
+                <h2 class="section-title">My <span class="gradient-text">Arsenal</span></h2>
+            </div>
+            <div class="skills-categories">
+                <!-- Technical -->
+                <div class="skill-category" data-reveal>
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Technical</h3>
+                        <p>Languages & Frameworks</p>
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-item" data-skill="Java">
+                            <div class="skill-icon"><i class="fab fa-java"></i></div>
+                            <span class="skill-name">Java</span>
+                            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+                        </div>
+                        <div class="skill-item" data-skill="C++">
+                            <div class="skill-icon"><i class="fas fa-code"></i></div>
+                            <span class="skill-name">C++</span>
+                            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+                        </div>
+                        <div class="skill-item" data-skill="JavaScript">
+                            <div class="skill-icon"><i class="fab fa-js-square"></i></div>
+                            <span class="skill-name">JavaScript</span>
+                            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+                        </div>
+                        <div class="skill-item" data-skill="React">
+                            <div class="skill-icon"><i class="fab fa-react"></i></div>
+                            <span class="skill-name">React</span>
+                            <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+                        </div>
+                        <div class="skill-item" data-skill="Python">
+                            <div class="skill-icon"><i class="fab fa-python"></i></div>
+                            <span class="skill-name">Python</span>
+                            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+                        </div>
+                        <div class="skill-item" data-skill="HTML/CSS">
+                            <div class="skill-icon"><i class="fab fa-html5"></i></div>
+                            <span class="skill-name">HTML/CSS</span>
+                            <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+                        </div>
+                        <div class="skill-item" data-skill="PHP">
+                            <div class="skill-icon"><i class="fab fa-php"></i></div>
+                            <span class="skill-name">PHP</span>
+                            <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Creative -->
+                <div class="skill-category" data-reveal>
+                    <div class="category-header">
+                        <div class="category-icon creative-icon">
+                            <i class="fas fa-film"></i>
+                        </div>
+                        <h3>Creative</h3>
+                        <p>Visual & Media Production</p>
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-item" data-skill="Videography">
+                            <div class="skill-icon"><i class="fas fa-video"></i></div>
+                            <span class="skill-name">Videography</span>
+                            <div class="skill-bar"><div class="skill-fill creative-fill" data-width="95"></div></div>
+                        </div>
+                        <div class="skill-item" data-skill="Photography">
+                            <div class="skill-icon"><i class="fas fa-camera"></i></div>
+                            <span class="skill-name">Photography</span>
+                            <div class="skill-bar"><div class="skill-fill creative-fill" data-width="90"></div></div>
+                        </div>
+                        <div class="skill-item" data-skill="Video Editing">
+                            <div class="skill-icon"><i class="fas fa-cut"></i></div>
+                            <span class="skill-name">Video Editing</span>
+                            <div class="skill-bar"><div class="skill-fill creative-fill" data-width="92"></div></div>
+                        </div>
+                        <div class="skill-item" data-skill="Content Creation">
+                            <div class="skill-icon"><i class="fas fa-pen-fancy"></i></div>
+                            <span class="skill-name">Content Creation</span>
+                            <div class="skill-bar"><div class="skill-fill creative-fill" data-width="88"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="skill-category" data-reveal>
+                    <div class="category-header">
+                        <div class="category-icon soft-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Soft Skills</h3>
+                        <p>Leadership & Communication</p>
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-item" data-skill="Leadership">
+                            <div class="skill-icon"><i class="fas fa-users"></i></div>
+                            <span class="skill-name">Leadership</span>
+                            <div class="skill-bar"><div class="skill-fill soft-fill" data-width="95"></div></div>
+                        </div>
+                        <div class="skill-item" data-skill="Public Speaking">
+                            <div class="skill-icon"><i class="fas fa-microphone"></i></div>
+                            <span class="skill-name">Public Speaking</span>
+                            <div class="skill-bar"><div class="skill-fill soft-fill" data-width="85"></div></div>
+                        </div>
+                        <div class="skill-item" data-skill="Event Management">
+                            <div class="skill-icon"><i class="fas fa-calendar-check"></i></div>
+                            <span class="skill-name">Event Management</span>
+                            <div class="skill-bar"><div class="skill-fill soft-fill" data-width="90"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== PROJECTS SECTION ===================== -->
+    <section class="section projects" id="projects">
+        <div class="section-bg-glow glow-right"></div>
+        <div class="container">
+            <div class="section-header" data-reveal>
+                <span class="section-label">03 — Featured Work</span>
+                <h2 class="section-title">Selected <span class="gradient-text">Projects</span></h2>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-reveal>
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-glass-martini-alt"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <span class="project-category">Desktop Application</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Drinks Ordering System</h3>
+                        <p class="project-desc">A comprehensive desktop application for managing drink orders with real-time inventory tracking, user authentication, and an intuitive ordering interface.</p>
+                        <div class="project-tech">
+                            <span>C++</span>
+                            <span>OOP</span>
+                            <span>Data Structures</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-btn">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-reveal>
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-shoe-prints"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <span class="project-category">Web Application</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Online Shoe Website</h3>
+                        <p class="project-desc">A modern e-commerce platform featuring product catalogs, shopping cart functionality, secure checkout, and responsive design for seamless shopping.</p>
+                        <div class="project-tech">
+                            <span>HTML/CSS</span>
+                            <span>JavaScript</span>
+                            <span>PHP</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-btn">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card" data-reveal>
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <span class="project-category">Corporate Website</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">AXIO Engineering Website</h3>
+                        <p class="project-desc">Professional corporate website for an engineering firm, featuring service showcases, project portfolios, team profiles, and client testimonials.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>JavaScript</span>
+                            <span>CSS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-btn">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card" data-reveal>
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <span class="project-category">Startup Website</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Skygen Innovators Website</h3>
+                        <p class="project-desc">A cutting-edge tech startup website with dynamic animations, modern UI components, interactive showcases, and a futuristic design language.</p>
+                        <div class="project-tech">
+                            <span>JavaScript</span>
+                            <span>HTML/CSS</span>
+                            <span>Animations</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-btn">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== EXPERIENCE SECTION ===================== -->
+    <section class="section experience" id="experience">
+        <div class="container">
+            <div class="section-header" data-reveal>
+                <span class="section-label">04 — Leadership Journey</span>
+                <h2 class="section-title">Experience & <span class="gradient-text">Impact</span></h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-item" data-reveal>
+                    <div class="timeline-dot">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">
+                            <i class="fas fa-calendar"></i>
+                            <span>2024 — Present</span>
+                        </div>
+                        <h3>Director of Videography</h3>
+                        <h4>UET Media Club (UMC)</h4>
+                        <p>Leading the videography wing of UET's official media club. Spearheaded cinematic productions for university events, managed creative teams, and established new standards for video content quality across campus.</p>
+                        <div class="timeline-tags">
+                            <span>Videography</span>
+                            <span>Team Leadership</span>
+                            <span>Content Strategy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-reveal>
+                    <div class="timeline-dot">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">
+                            <i class="fas fa-calendar"></i>
+                            <span>2024</span>
+                        </div>
+                        <h3>Head of Media</h3>
+                        <h4>Jarah — National Level Event</h4>
+                        <p>Directed complete media coverage for a national-level event. Coordinated multi-camera setups, live streaming, post-production, and social media content strategy reaching thousands of attendees.</p>
+                        <div class="timeline-tags">
+                            <span>National Event</span>
+                            <span>Media Direction</span>
+                            <span>Live Production</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-reveal>
+                    <div class="timeline-dot">
+                        <i class="fas fa-camera-retro"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">
+                            <i class="fas fa-calendar"></i>
+                            <span>2023 — 2024</span>
+                        </div>
+                        <h3>Director of Media</h3>
+                        <h4>QDS — Quranic & Dawah Society</h4>
+                        <p>Managed all media operations including event documentation, promotional content, and brand identity development. Grew social media presence significantly through strategic visual storytelling.</p>
+                        <div class="timeline-tags">
+                            <span>Brand Identity</span>
+                            <span>Social Media</span>
+                            <span>Visual Storytelling</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CREATIVE SHOWCASE ===================== -->
+    <section class="section creative" id="creative">
+        <div class="section-bg-glow"></div>
+        <div class="container">
+            <div class="section-header" data-reveal>
+                <span class="section-label">05 — Creative Reel</span>
+                <h2 class="section-title">Cinematic <span class="gradient-text">Showcase</span></h2>
+                <p class="section-subtitle">Visual stories that captivate, inspire, and leave an impression</p>
+            </div>
+            <div class="creative-grid">
+                <div class="creative-item creative-item-large" data-reveal>
+                    <div class="creative-video-wrapper">
+                        <video class="creative-video" muted loop playsinline preload="metadata" poster="ASSETS/creative-reel.png">
+                            <source src="ASSETS/hero-video.mp4" type="video/mp4">
+                        </video>
+                        <div class="creative-play-btn">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="creative-overlay">
+                            <span class="creative-tag">Featured Reel</span>
+                            <h3>Cinematic Event Coverage</h3>
+                            <p>Showreel of events and productions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="creative-item" data-reveal>
+                    <div class="creative-video-wrapper">
+                        <video class="creative-video" muted loop playsinline preload="metadata">
+                            <source src="ASSETS/Roz ek chez toot jati hai....#instagood #nature #trending #poetry #islamabad #reels  #viral #fyp.mp4" type="video/mp4">
+                        </video>
+                        <div class="creative-play-btn">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="creative-overlay">
+                            <span class="creative-tag">Poetry Visual</span>
+                            <h3>Nature & Poetry</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="creative-item" data-reveal>
+                    <div class="creative-video-wrapper">
+                        <video class="creative-video" muted loop playsinline preload="metadata">
+                            <source src="ASSETS/Some feelings settle deep in the chest, too heavy to carry yet impossible to put them into words.mp4" type="video/mp4">
+                        </video>
+                        <div class="creative-play-btn">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="creative-overlay">
+                            <span class="creative-tag">Cinematic</span>
+                            <h3>Emotional Storytelling</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="creative-item" data-reveal>
+                    <div class="creative-image-wrapper">
+                        <img src="ASSETS/creative-reel.png" alt="Behind the Scenes" loading="lazy">
+                        <div class="creative-overlay">
+                            <span class="creative-tag">BTS</span>
+                            <h3>Behind the Scenes</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="creative-cta" data-reveal>
+                <a href="https://www.instagram.com/saifylms" target="_blank" rel="noopener" class="btn btn-primary">
+                    <i class="fab fa-instagram"></i>
+                    <span>More on Instagram</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CONTACT SECTION ===================== -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-header" data-reveal>
+                <span class="section-label">06 — Get In Touch</span>
+                <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
+                <p class="section-subtitle">Have a project in mind? Let's build something extraordinary together.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info" data-reveal>
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-card-content">
+                            <h4>Email</h4>
+                            <a href="mailto:saifullahrazzaq8@gmail.com">saifullahrazzaq8@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-card-content">
+                            <h4>Phone</h4>
+                            <a href="tel:+923417672173">+92 341 767 2173</a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-card-content">
+                            <h4>Location</h4>
+                            <span>UET Taxila, Pakistan</span>
+                        </div>
+                    </div>
+                    <div class="contact-socials">
+                        <a href="https://www.linkedin.com/in/muhammad-saifullah-7b8488253/" target="_blank" rel="noopener" class="contact-social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.instagram.com/saifylms" target="_blank" rel="noopener" class="contact-social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="mailto:saifullahrazzaq8@gmail.com" class="contact-social-link" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm" data-reveal>
+                    <div class="form-group">
+                        <input type="text" id="formName" name="name" required placeholder=" " autocomplete="name">
+                        <label for="formName">Your Name</label>
+                        <div class="form-line"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="formEmail" name="email" required placeholder=" " autocomplete="email">
+                        <label for="formEmail">Your Email</label>
+                        <div class="form-line"></div>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="formMessage" name="message" rows="5" required placeholder=" "></textarea>
+                        <label for="formMessage">Your Message</label>
+                        <div class="form-line"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit" id="formSubmit">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">SR<span class="logo-dot">.</span></span>
+                    <p>Building Digital Experiences & Capturing Stories</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://www.linkedin.com/in/muhammad-saifullah-7b8488253/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/saifylms" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Saifullah Razzaq. All rights reserved.</span>
+                <span class="footer-heart">Made with <i class="fas fa-heart"></i></span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
